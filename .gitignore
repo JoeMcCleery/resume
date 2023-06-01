@@ -1,10 +1,21 @@
-# Nuxt dev/build outputs
-.output
-.nuxt
-# Node dependencies
-node_modules
-# System files
-*.log
-# IDE folders
+# IDE
 .vs
+.vscode
 .idea
+
+# Nuxt
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+dist
+.DS_Store
+
+# Environment variables
+.env*
+!.env.example
+
+# Mkcert
+*.pem
