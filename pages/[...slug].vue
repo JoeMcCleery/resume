@@ -15,6 +15,13 @@ const story = await useAsyncStoryblok(
   { version: config.public.storyblokVersion }
 )
 
+if (!story.value) {
+  throw createError({
+    statusCode: 404,
+    fatal: true
+  })
+}
+
 emit('page-layout', story.value.content.layout)
 emit('page-colours', {
   textColour: hexToRgb(story.value.content.text_colour.color),
