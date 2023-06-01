@@ -14,7 +14,8 @@ module.exports = {
     './storyblok/**/*.vue'
   ],
   plugins: [
-    require('@headlessui/tailwindcss')
+    require('@headlessui/tailwindcss'),
+    require('@tailwindcss/typography')
   ],
   theme: {
     colors: {
