@@ -2,6 +2,7 @@
   <div
     v-if="blok"
     v-editable="blok"
+    class="prose"
     v-html="computedRichText"
   />
 </template>
