@@ -5,23 +5,3 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-const config = useRuntimeConfig()
-
-const { data } = await useStoryblokApi().getStories({
-  starts_with: 'pages/',
-  filter_query: {
-    show_navigation_link: {
-      in: true
-    }
-  },
-  version: config.public.storyblokVersion
-})
-</script>
-
-<style scoped>
-nav a.router-link-active {
-  @apply underline underline-offset-4 decoration-4 decoration-text;
-}
-</style>
