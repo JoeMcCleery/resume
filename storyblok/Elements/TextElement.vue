@@ -2,7 +2,7 @@
   <div
     v-if="blok"
     v-editable="blok"
-    v-html="text"
+    v-html="computedRichText"
   />
 </template>
 
@@ -13,7 +13,5 @@ const props = defineProps({
     required: true
   }
 })
-const text = computed(() =>
-  renderRichText(props.blok.text)
-)
+const computedRichText = computed(() => renderRichText(props.blok.text))
 </script>
