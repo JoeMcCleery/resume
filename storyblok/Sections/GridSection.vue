@@ -11,7 +11,7 @@
           {{ blok.section_heading }}
         </h1>
       </div>
-      <div class="flex flex-row gap-4 flex-wrap items-center">
+      <div v-if="blok.elements.length > 0" class="flex flex-row gap-4 flex-wrap items-center">
         <StoryblokComponent
           v-for="element in blok.elements"
           :key="element._uid"
