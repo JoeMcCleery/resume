@@ -1,6 +1,6 @@
 <template>
-  <header class="w-full h-24 shadow-lg fixed backdrop-blur-lg z-50">
-    <div class="absolute h-full w-full opacity-20 -z-10 bg-background" />
+  <header class="fixed w-full h-24 shadow-lg backdrop-blur-lg z-50">
+    <div class="absolute h-full w-full opacity-50 -z-10 bg-background" />
     <div class="container p-4 h-full mx-auto flex items-center justify-between">
       <NuxtLink to="/">
         <h1 class="text-3xl font-bold">

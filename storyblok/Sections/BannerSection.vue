@@ -2,7 +2,7 @@
   <div
     v-if="blok"
     v-editable="blok"
-    class="flex justify-center items-center h-96 w-full overflow-hidden relative"
+    class="relative w-full text-text bg-background h-96"
     :style="blok.override_colours ? cssVars : ''"
   >
     <nuxt-img
@@ -20,8 +20,8 @@
       class="absolute w-full h-full bg-background"
       :style="`opacity: ${blok.overlay_opacity / 100}`"
     />
-    <div class="h-full container m-auto p-4 flex justify-center items-center z-10">
-      <h1 class="font-bold text-4xl text-center">
+    <div class="relative h-full container m-auto p-4 flex justify-center items-center z-10">
+      <h1 class="text-6xl font-bold text-center">
         {{ blok.banner_text }}
       </h1>
     </div>

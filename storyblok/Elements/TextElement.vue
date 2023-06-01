@@ -2,9 +2,12 @@
   <div
     v-if="blok"
     v-editable="blok"
-    class="prose"
-    v-html="computedRichText"
-  />
+  >
+    <div
+      class="prose max-w-none"
+      v-html="computedRichText"
+    />
+  </div>
 </template>
 
 <script setup>

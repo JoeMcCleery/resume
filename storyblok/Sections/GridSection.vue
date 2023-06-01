@@ -2,14 +2,14 @@
   <div
     v-if="blok"
     v-editable="blok"
-    class="flex justify-center items-center w-full bg-background text-text"
+    class="relative w-full text-text bg-background"
     :style="blok.override_colours ? cssVars : ''"
   >
     <div class="container m-auto px-4 py-16 flex flex-col gap-4">
       <div v-if="blok.section_heading">
-        <h2 class="text-lg font-bold">
+        <h1 class="text-4xl font-bold">
           {{ blok.section_heading }}
-        </h2>
+        </h1>
       </div>
       <div class="flex flex-row gap-4 flex-wrap items-center">
         <StoryblokComponent
