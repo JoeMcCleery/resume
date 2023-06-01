@@ -1,5 +1,8 @@
 <template>
-  <div :style="cssVars">
+  <div
+    class="relative w-full text-text bg-background"
+    :style="cssVars"
+  >
     <NuxtLayout :name="pageLayout">
       <NuxtPage @page-layout="updatePageLayout" @page-colours="updatePageColours" />
     </NuxtLayout>

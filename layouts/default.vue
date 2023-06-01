@@ -1,6 +1,8 @@
 <template>
-  <main class="text-text bg-background">
+  <main>
     <DefaultHeader />
-    <slot />
+    <div class="pt-24">
+      <slot />
+    </div>
   </main>
 </template>
