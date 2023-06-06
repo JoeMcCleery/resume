@@ -2,22 +2,21 @@
   <div
     v-if="blok"
     v-editable="blok"
-    class="relative w-full text-text bg-background"
+    class="relative container m-auto px-4 py-16 text-text bg-background flex flex-col space-y-8 items-center justify-center"
     :style="blok.override_colours ? cssVars : ''"
   >
-    <div class="container m-auto px-4 py-16 flex flex-col gap-4">
-      <div v-if="blok.section_heading">
-        <h1 class="text-4xl font-bold">
-          {{ blok.section_heading }}
-        </h1>
-      </div>
-      <div v-if="blok.elements.length > 0" class="flex flex-row gap-4 flex-wrap items-center">
-        <StoryblokComponent
-          v-for="element in blok.elements"
-          :key="element._uid"
-          :blok="element"
-        />
-      </div>
+    <div v-if="blok.section_heading" class="w-full">
+      <h1 class="text-4xl font-bold">
+        {{ blok.section_heading }}
+      </h1>
+    </div>
+
+    <div v-if="blok.elements.length > 0" class="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+      <StoryblokComponent
+        v-for="element in blok.elements"
+        :key="element._uid"
+        :blok="element"
+      />
     </div>
   </div>
 </template>
