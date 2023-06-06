@@ -1,21 +1,16 @@
 <template>
-  <div
+  <RichText
     v-if="blok"
     v-editable="blok"
-  >
-    <div
-      class="prose max-w-none"
-      v-html="computedRichText"
-    />
-  </div>
+    :text="blok.text"
+  />
 </template>
 
-<script setup>
-const props = defineProps({
+<script setup lang='ts'>
+defineProps({
   blok: {
     type: Object,
     required: true
   }
 })
-const computedRichText = computed(() => renderRichText(props.blok.text))
 </script>
