@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="text"
-    class="prose max-w-none"
+    class="prose dark:prose-invert max-w-none"
     v-html="computedRichText"
   />
 </template>
