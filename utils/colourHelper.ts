@@ -13,3 +13,14 @@ export const hexToRgb = (hex: string) : string => {
 export const rgbToHex = (r: number, g: number, b: number) : string => {
   return '#' + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1)
 }
+
+export const defaultColourContext = () => ref({
+  light: {
+    textColour: '32 32 32',
+    backgroundColour: '255 255 255'
+  },
+  dark: {
+    textColour: '255 255 255',
+    backgroundColour: '64 64 64'
+  }
+})

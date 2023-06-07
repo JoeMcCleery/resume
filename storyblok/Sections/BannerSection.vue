@@ -2,7 +2,7 @@
   <div
     v-if="blok"
     v-editable="blok"
-    class="relative w-full text-text bg-background h-96"
+    class="relative w-full text-text bg-background dark:text-textDark dark:bg-backgroundDark h-96"
     :style="blok.override_colours ? cssVars : ''"
   >
     <nuxt-img
@@ -36,12 +36,18 @@ const props = defineProps({
   }
 })
 
-const sectionColours = ref({ textColour: '255 255 255', backgroundColour: '128 128 128' })
-
-sectionColours.value = {
-  textColour: hexToRgb(props.blok.text_colour.color),
-  backgroundColour: hexToRgb(props.blok.background_colour.color)
+const sectionColours = defaultColourContext()
+if (props.blok.override_colours) {
+  sectionColours.value = {
+    light: {
+      textColour: hexToRgb(props.blok.text_colour.color),
+      backgroundColour: hexToRgb(props.blok.background_colour.color)
+    },
+    dark: {
+      textColour: hexToRgb(props.blok.text_colour_dark.color),
+      backgroundColour: hexToRgb(props.blok.background_colour_dark.color)
+    }
+  }
 }
-
 const cssVars = computedCssVars(sectionColours)
 </script>

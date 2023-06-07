@@ -24,8 +24,14 @@ if (!story.value) {
 
 emit('page-layout', story.value.content.layout)
 emit('page-colours', {
-  textColour: hexToRgb(story.value.content.text_colour.color),
-  backgroundColour: hexToRgb(story.value.content.background_colour.color)
+  light: {
+    textColour: hexToRgb(story.value.content.text_colour.color),
+    backgroundColour: hexToRgb(story.value.content.background_colour.color)
+  },
+  dark: {
+    textColour: hexToRgb(story.value.content.text_colour_dark.color),
+    backgroundColour: hexToRgb(story.value.content.background_colour_dark.color)
+  }
 })
 
 useSeoMeta({

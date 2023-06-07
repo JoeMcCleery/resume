@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full text-text bg-background"
+    class="relative w-full text-text bg-background dark:text-textDark dark:bg-backgroundDark"
     :style="cssVars"
   >
     <NuxtLayout :name="pageLayout">
@@ -13,7 +13,7 @@
 import './index.d.ts'
 
 const pageLayout = ref('default')
-const pageColours = ref({ textColour: '255 255 255', backgroundColour: '128 128 128' })
+const pageColours = defaultColourContext()
 
 function updatePageLayout (layout: string) {
   pageLayout.value = layout
