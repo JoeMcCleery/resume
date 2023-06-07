@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
     '@storyblok/nuxt',
-    'nuxt-headlessui'
+    'nuxt-headlessui',
+    '@nuxtjs/color-mode'
   ],
   runtimeConfig: {
     public: {
@@ -32,6 +33,9 @@ export default defineNuxtConfig({
   },
   storyblok: {
     accessToken: process.env.STORYBLOK_ACCESS_TOKEN
+  },
+  colorMode: {
+    classSuffix: ''
   },
   hooks: {
     async 'nitro:config' (nitroConfig) {
