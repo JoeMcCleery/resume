@@ -2,7 +2,7 @@
   <div
     v-if="blok"
     v-editable="blok"
-    class="relative w-full text-text bg-background dark:text-textDark dark:bg-backgroundDark h-96"
+    class="relative w-full text-context bg-context h-96"
     :style="blok.override_colours ? cssVars : ''"
   >
     <nuxt-img
@@ -17,7 +17,7 @@
       class="object-cover absolute w-full h-full"
     />
     <div
-      class="absolute w-full h-full bg-background"
+      class="absolute w-full h-full bg-context"
       :style="`opacity: ${blok.overlay_opacity / 100}`"
     />
     <div class="relative h-full container m-auto p-4 flex justify-center items-center z-10">

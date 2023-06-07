@@ -2,7 +2,7 @@
   <div
     v-if="blok"
     v-editable="blok"
-    class="relative container m-auto px-4 py-16 text-text bg-background dark:text-textDark dark:bg-backgroundDark flex flex-col space-y-8 items-center justify-center"
+    class="relative container m-auto px-4 py-16 text-context bg-context flex flex-col space-y-8 items-center justify-center"
     :style="blok.override_colours ? cssVars : ''"
   >
     <div v-if="blok.section_heading" class="w-full">

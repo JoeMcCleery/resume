@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .text-context {
+        @apply text-text dark:text-textDark
+    }
+    .text-context-lighter {
+        @apply text-text-lighter dark:text-textDark-darker
+    }
+    .text-context-darker {
+        @apply text-text-darker dark:text-textDark-lighter
+    }
+    
+    .bg-context {
+        @apply bg-background dark:bg-backgroundDark
+    }
+    .bg-context-lighter {
+        @apply bg-background-lighter dark:bg-backgroundDark-darker
+    }
+    .bg-context-darker {
+        @apply bg-background-darker dark:bg-backgroundDark-lighter
+    }
+}

@@ -1,6 +1,6 @@
 <template>
   <header class="fixed w-full h-24 shadow-lg backdrop-blur-lg z-50">
-    <div class="absolute h-full w-full opacity-50 -z-10 bg-background" />
+    <div class="absolute h-full w-full opacity-50 -z-10 bg-context" />
     <div class="relative container p-4 h-full w-full mx-auto flex items-center justify-between space-x-8">
       <div class="flex items-center justify-center space-x-8">
         <NuxtLink to="/">
@@ -39,7 +39,7 @@
 <script setup lang="ts">
 const colourMode = useColorMode()
 const config = useRuntimeConfig()
-const darkModeEnabled = ref(false)
+const darkModeEnabled = ref(colourMode.value === 'dark')
 
 watch(darkModeEnabled, (enabled) => {
   colourMode.preference = enabled ? 'dark' : 'light'

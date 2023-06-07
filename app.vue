@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full text-text bg-background dark:text-textDark dark:bg-backgroundDark"
+    class="relative w-full text-context bg-context"
     :style="cssVars"
   >
     <NuxtLayout :name="pageLayout">
