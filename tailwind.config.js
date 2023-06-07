@@ -30,30 +30,30 @@ module.exports = {
       colors: {
         text: {
           DEFAULT: textColour,
-          lighter: lighten(textColour, 10),
-          darker: darken(textColour, 10)
+          lighter: lighten(textColour, 20),
+          darker: darken(textColour, 20)
         },
         background: {
           DEFAULT: backgroundColour,
-          lighter: lighten(backgroundColour, 10),
-          darker: darken(backgroundColour, 10)
+          lighter: lighten(backgroundColour, 20),
+          darker: darken(backgroundColour, 20)
         },
         textDark: {
           DEFAULT: textColourDark,
-          lighter: lighten(textColourDark, 10),
-          darker: darken(textColourDark, 10)
+          lighter: lighten(textColourDark, 20),
+          darker: darken(textColourDark, 20)
         },
         backgroundDark: {
           DEFAULT: backgroundColourDark,
-          lighter: lighten(backgroundColourDark, 10),
-          darker: darken(backgroundColourDark, 10)
+          lighter: lighten(backgroundColourDark, 20),
+          darker: darken(backgroundColourDark, 20)
         }
       },
       fontFamily: {
         roboto: 'Roboto'
       },
       typography: ({ theme }) => ({
-        pink: {
+        DEFAULT: {
           css: {
             '--tw-prose-body': theme('colors.text'),
             '--tw-prose-headings': theme('colors.text'),
@@ -74,19 +74,19 @@ module.exports = {
             '--tw-prose-invert-body': theme('colors.textDark'),
             '--tw-prose-invert-headings': theme('colors.textDark'),
             '--tw-prose-invert-lead': theme('colors.textDark'),
-            '--tw-prose-invert-links': theme('colors.textDark.darker'),
+            '--tw-prose-invert-links': theme('colors.textDark.lighter'),
             '--tw-prose-invert-bold': theme('colors.textDark'),
-            '--tw-prose-invert-counters': theme('colors.textDark.lighter'),
-            '--tw-prose-invert-bullets': theme('colors.textDark.lighter'),
-            '--tw-prose-invert-hr': theme('colors.textDark.lighter'),
+            '--tw-prose-invert-counters': theme('colors.textDark.darker'),
+            '--tw-prose-invert-bullets': theme('colors.textDark.darker'),
+            '--tw-prose-invert-hr': theme('colors.textDark.darker'),
             '--tw-prose-invert-quotes': theme('colors.textDark'),
-            '--tw-prose-invert-quote-borders': theme('colors.backgroundDark.lighter'),
+            '--tw-prose-invert-quote-borders': theme('colors.backgroundDark.darker'),
             '--tw-prose-invert-captions': theme('colors.textDark'),
             '--tw-prose-invert-code': theme('colors.textDark'),
             '--tw-prose-invert-pre-code': theme('colors.textDark'),
-            '--tw-prose-invert-pre-bg': theme('colors.backgroundDark.lighter'),
-            '--tw-prose-invert-th-borders': theme('colors.backgroundDark.lighter'),
-            '--tw-prose-invert-td-borders': theme('colors.backgroundDark.lighter')
+            '--tw-prose-invert-pre-bg': theme('colors.backgroundDark.darker'),
+            '--tw-prose-invert-th-borders': theme('colors.backgroundDark.darker'),
+            '--tw-prose-invert-td-borders': theme('colors.backgroundDark.darker')
           }
         }
       })
