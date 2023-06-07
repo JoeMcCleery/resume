@@ -20,16 +20,32 @@
       </div>
       <div class="flex items-center justify-center space-x-8">
         <HeadlessSwitch
-          v-model="darkModeEnabled"
-          :class="darkModeEnabled ? 'bg-teal-900' : 'bg-teal-700'"
-          class="relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 ml-auto"
+          v-if="!colourMode.unknown"
+          v-slot="{ checked }"
+          as="template"
+          :default-checked="colourMode.value === 'dark'"
+          @update:model-value="checked => colourMode.preference = checked ? 'dark' : 'light'"
         >
-          <span class="sr-only">Use setting</span>
-          <span
-            aria-hidden="true"
-            :class="darkModeEnabled ? 'translate-x-9' : 'translate-x-0'"
-            class="pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out"
-          />
+          <button
+            :class="checked ? 'bg-gray-500' : 'bg-yellow-500'"
+            class="relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 ml-auto"
+          >
+            <span class="sr-only">Use Dark Mode</span>
+            <div
+              aria-hidden="true"
+              :class="checked ? 'translate-x-9' : 'translate-x-0'"
+              class="relative pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full text-gray-700 bg-white shadow-lg ring-0 transition duration-200 ease-in-out p-1"
+            >
+              <MoonIcon
+                :class="checked ? '' : 'opacity-0'"
+                class="transition-opacity duration-200 ease-in-out"
+              />
+              <SunIcon
+                :class="checked ? 'opacity-0' : ''"
+                class="absolute top-0 left-0 transition-opacity duration-200 ease-in-out"
+              />
+            </div>
+          </button>
         </HeadlessSwitch>
       </div>
     </div>
@@ -37,13 +53,10 @@
 </template>
 
 <script setup lang="ts">
+import { SunIcon, MoonIcon } from '@heroicons/vue/24/solid'
+
 const colourMode = useColorMode()
 const config = useRuntimeConfig()
-const darkModeEnabled = ref(colourMode.value === 'dark')
-
-watch(darkModeEnabled, (enabled) => {
-  colourMode.preference = enabled ? 'dark' : 'light'
-})
 
 const { data } = await useStoryblokApi().getStory('navigation-config', {
   resolve_relations: [
@@ -59,6 +72,6 @@ const stories = computed(() => {
 
 <style scoped>
 nav a.router-link-active {
-  @apply underline underline-offset-4 decoration-4 decoration-text;
+  @apply underline underline-offset-4 decoration-4 decoration-context;
 }
 </style>
