@@ -1,7 +1,11 @@
-const textColour = 'rgb(var(--text-colour) / <alpha-value>)'
-const backgroundColour = 'rgb(var(--background-colour) / <alpha-value>)'
-const textColourDark = 'rgb(var(--text-colour-dark) / <alpha-value>)'
-const backgroundColourDark = 'rgb(var(--background-colour-dark) / <alpha-value>)'
+const textColourAlpha = 'rgb(var(--text-colour) / <alpha-value>)'
+const textColour = 'rgb(var(--text-colour))'
+const backgroundColourAlpha = 'rgb(var(--background-colour) / <alpha-value>)'
+const backgroundColour = 'rgb(var(--background-colour))'
+const textColourDarkAlpha = 'rgb(var(--text-colour-dark) / <alpha-value>)'
+const textColourDark = 'rgb(var(--text-colour-dark))'
+const backgroundColourDarkAlpha = 'rgb(var(--background-colour-dark) / <alpha-value>)'
+const backgroundColourDark = 'rgb(var(--background-colour-dark))'
 const lighten = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, white ${amount}%)`
 const darken = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, black ${amount}%)`
 
@@ -29,67 +33,67 @@ module.exports = {
     extend: {
       colors: {
         text: {
-          DEFAULT: textColour,
-          lighter: lighten(textColour, 20),
-          darker: darken(textColour, 20)
+          DEFAULT: textColourAlpha,
+          lighter: lighten(textColourAlpha, 20),
+          darker: darken(textColourAlpha, 20)
         },
         background: {
-          DEFAULT: backgroundColour,
-          lighter: lighten(backgroundColour, 20),
-          darker: darken(backgroundColour, 20)
+          DEFAULT: backgroundColourAlpha,
+          lighter: lighten(backgroundColourAlpha, 20),
+          darker: darken(backgroundColourAlpha, 20)
         },
         textDark: {
-          DEFAULT: textColourDark,
-          lighter: lighten(textColourDark, 20),
-          darker: darken(textColourDark, 20)
+          DEFAULT: textColourDarkAlpha,
+          lighter: lighten(textColourDarkAlpha, 20),
+          darker: darken(textColourDarkAlpha, 20)
         },
         backgroundDark: {
-          DEFAULT: backgroundColourDark,
-          lighter: lighten(backgroundColourDark, 20),
-          darker: darken(backgroundColourDark, 20)
+          DEFAULT: backgroundColourDarkAlpha,
+          lighter: lighten(backgroundColourDarkAlpha, 20),
+          darker: darken(backgroundColourDarkAlpha, 20)
         }
       },
       fontFamily: {
         roboto: 'Roboto'
       },
-      typography: ({ theme }) => ({
+      typography: {
         DEFAULT: {
           css: {
-            '--tw-prose-body': theme('colors.text'),
-            '--tw-prose-headings': theme('colors.text'),
-            '--tw-prose-lead': theme('colors.text'),
-            '--tw-prose-links': theme('colors.text.darker'),
-            '--tw-prose-bold': theme('colors.text'),
-            '--tw-prose-counters': theme('colors.background.darker'),
-            '--tw-prose-bullets': theme('colors.background.darker'),
-            '--tw-prose-hr': theme('colors.text.lighter'),
-            '--tw-prose-quotes': theme('colors.text'),
-            '--tw-prose-quote-borders': theme('colors.background.darker'),
-            '--tw-prose-captions': theme('colors.text'),
-            '--tw-prose-code': theme('colors.text'),
-            '--tw-prose-pre-code': theme('colors.text'),
-            '--tw-prose-pre-bg': theme('colors.background.darker'),
-            '--tw-prose-th-borders': theme('colors.background.darker'),
-            '--tw-prose-td-borders': theme('colors.background.darker'),
-            '--tw-prose-invert-body': theme('colors.textDark'),
-            '--tw-prose-invert-headings': theme('colors.textDark'),
-            '--tw-prose-invert-lead': theme('colors.textDark'),
-            '--tw-prose-invert-links': theme('colors.textDark.lighter'),
-            '--tw-prose-invert-bold': theme('colors.textDark'),
-            '--tw-prose-invert-counters': theme('colors.backgroundDark.lighter'),
-            '--tw-prose-invert-bullets': theme('colors.backgroundDark.lighter'),
-            '--tw-prose-invert-hr': theme('colors.textDark.darker'),
-            '--tw-prose-invert-quotes': theme('colors.textDark'),
-            '--tw-prose-invert-quote-borders': theme('colors.backgroundDark.lighter'),
-            '--tw-prose-invert-captions': theme('colors.textDark'),
-            '--tw-prose-invert-code': theme('colors.textDark'),
-            '--tw-prose-invert-pre-code': theme('colors.textDark'),
-            '--tw-prose-invert-pre-bg': theme('colors.backgroundDark.lighter'),
-            '--tw-prose-invert-th-borders': theme('colors.backgroundDark.lighter'),
-            '--tw-prose-invert-td-borders': theme('colors.backgroundDark.lighter')
+            '--tw-prose-body': textColour,
+            '--tw-prose-headings': textColour,
+            '--tw-prose-lead': textColour,
+            '--tw-prose-links': darken(textColour, 20),
+            '--tw-prose-bold': textColour,
+            '--tw-prose-counters': lighten(textColour, 20),
+            '--tw-prose-bullets': lighten(textColour, 20),
+            '--tw-prose-hr': lighten(textColour, 20),
+            '--tw-prose-quotes': textColour,
+            '--tw-prose-quote-borders': lighten(textColour, 20),
+            '--tw-prose-captions': textColour,
+            '--tw-prose-code': lighten(textColour, 20),
+            '--tw-prose-pre-code': lighten(textColour, 50),
+            '--tw-prose-pre-bg': darken(backgroundColour, 50),
+            '--tw-prose-th-borders': lighten(textColour, 20),
+            '--tw-prose-td-borders': lighten(textColour, 20),
+            '--tw-prose-invert-body': textColourDark,
+            '--tw-prose-invert-headings': textColourDark,
+            '--tw-prose-invert-lead': textColourDark,
+            '--tw-prose-invert-links': darken(textColourDark, 20),
+            '--tw-prose-invert-bold': textColourDark,
+            '--tw-prose-invert-counters': darken(textColourDark, 20),
+            '--tw-prose-invert-bullets': darken(textColourDark, 20),
+            '--tw-prose-invert-hr': darken(textColourDark, 20),
+            '--tw-prose-invert-quotes': textColourDark,
+            '--tw-prose-invert-quote-borders': darken(textColourDark, 20),
+            '--tw-prose-invert-captions': textColourDark,
+            '--tw-prose-invert-code': darken(textColourDark, 20),
+            '--tw-prose-invert-pre-code': lighten(textColourDark, 20),
+            '--tw-prose-invert-pre-bg': darken(backgroundColourDark, 20),
+            '--tw-prose-invert-th-borders': darken(textColourDark, 20),
+            '--tw-prose-invert-td-borders': darken(textColourDark, 20)
           }
         }
-      })
+      }
     }
   }
 }
