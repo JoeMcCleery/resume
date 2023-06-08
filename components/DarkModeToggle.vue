@@ -8,13 +8,13 @@
     >
       <button
         :class="darkModeEnabled ? 'bg-gray-500' : 'bg-yellow-500'"
-        class="relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out default-focus"
+        class="relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out default-focus"
       >
         <span class="sr-only">Use Dark Mode</span>
         <div
           aria-hidden="true"
-          :class="darkModeEnabled ? 'translate-x-9' : 'translate-x-0'"
-          class="relative pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full text-gray-700 bg-white shadow-lg ring-0 transition duration-200 ease-in-out p-1"
+          :class="darkModeEnabled ? 'translate-x-8' : 'translate-x-0'"
+          class="relative pointer-events-none inline-block h-8 w-8 transform rounded-full text-gray-600 bg-white shadow-lg ring-0 transition duration-200 ease-in-out p-1"
         >
           <MoonIcon
             :class="darkModeEnabled ? '' : 'opacity-0'"
