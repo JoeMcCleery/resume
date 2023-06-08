@@ -4,32 +4,32 @@
 
 @layer utilities {
     .text-context {
-        @apply text-text dark:text-textDark
+        @apply text-text dark:text-textDark transition-colors duration-200 ease-in-out
     }
     .text-context-lighter {
-        @apply text-text-lighter dark:text-textDark-darker
+        @apply text-text-lighter dark:text-textDark-darker transition-colors duration-200 ease-in-out
     }
     .text-context-darker {
-        @apply text-text-darker dark:text-textDark-lighter
+        @apply text-text-darker dark:text-textDark-lighter transition-colors duration-200 ease-in-out
     }
 
     .decoration-context {
-        @apply decoration-text dark:decoration-textDark
+        @apply decoration-text dark:decoration-textDark transition-colors duration-200 ease-in-out
     }
     .decoration-context-lighter {
-        @apply decoration-text-lighter dark:decoration-textDark-darker
+        @apply decoration-text-lighter dark:decoration-textDark-darker transition-colors duration-200 ease-in-out
     }
     .decoration-context-darker {
-        @apply decoration-text-darker dark:decoration-textDark-lighter
+        @apply decoration-text-darker dark:decoration-textDark-lighter transition-colors duration-200 ease-in-out
     }
 
     .bg-context {
-        @apply bg-background dark:bg-backgroundDark
+        @apply bg-background dark:bg-backgroundDark transition-colors duration-200 ease-in-out
     }
     .bg-context-lighter {
-        @apply bg-background-lighter dark:bg-backgroundDark-darker
+        @apply bg-background-lighter dark:bg-backgroundDark-darker transition-colors duration-200 ease-in-out
     }
     .bg-context-darker {
-        @apply bg-background-darker dark:bg-backgroundDark-lighter
+        @apply bg-background-darker dark:bg-backgroundDark-lighter transition-colors duration-200 ease-in-out
     }
 }
