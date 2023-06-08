@@ -23,6 +23,16 @@
         @apply decoration-text-darker dark:decoration-textDark-lighter transition-colors duration-200 ease-in-out
     }
 
+    .border-context {
+        @apply border-text dark:border-textDark transition-colors duration-200 ease-in-out
+    }
+    .border-context-lighter {
+        @apply border-text-lighter dark:border-textDark-darker transition-colors duration-200 ease-in-out
+    }
+    .border-context-darker {
+        @apply border-text-darker dark:border-textDark-lighter transition-colors duration-200 ease-in-out
+    }
+
     .bg-context {
         @apply bg-background dark:bg-backgroundDark transition-colors duration-200 ease-in-out
     }
