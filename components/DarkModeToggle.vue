@@ -8,7 +8,7 @@
     >
       <button
         :class="darkModeEnabled ? 'bg-gray-500' : 'bg-yellow-500'"
-        class="relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 ml-auto"
+        class="relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out default-focus"
       >
         <span class="sr-only">Use Dark Mode</span>
         <div
