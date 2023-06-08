@@ -2,7 +2,7 @@
   <nav>
     <ul class="flex space-x-4 text-lg font-bold items-center justify-center text-context decoration-context">
       <li>
-        <NuxtLink to="/" class="text-3xl font-bold px-4 py-2 text-context rounded-full border-2 border-context default-focus">
+        <NuxtLink to="/" class="inline-block leading-8 text-center text-3xl font-bold px-4 py-2 text-context rounded-full border-2 border-context default-focus">
           <span>{{ $config.public.websiteTitle }}</span>
         </NuxtLink>
       </li>
