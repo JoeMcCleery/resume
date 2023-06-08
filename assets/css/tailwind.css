@@ -12,6 +12,9 @@
     .text-context-darker {
         @apply text-text-darker dark:text-textDark-lighter transition-colors duration-200 ease-in-out
     }
+    .text-context-background {
+        @apply text-background dark:text-backgroundDark transition-colors duration-200 ease-in-out
+    }
 
     .decoration-context {
         @apply decoration-text dark:decoration-textDark transition-colors duration-200 ease-in-out
@@ -41,5 +44,12 @@
     }
     .bg-context-darker {
         @apply bg-background-darker dark:bg-backgroundDark-lighter transition-colors duration-200 ease-in-out
+    }
+    .bg-context-text {
+        @apply bg-text dark:bg-textDark transition-colors duration-200 ease-in-out
+    }
+
+    .default-focus {
+        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:ring-opacity-75
     }
 }
