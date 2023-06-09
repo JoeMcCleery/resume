@@ -21,8 +21,6 @@ const { data } = await useStoryblokApi().getStory('contact-links', {
   version: config.public.storyblokVersion
 })
 
-console.log(data)
-
 const links = computed(() => {
   return data.story.content.links
 })
