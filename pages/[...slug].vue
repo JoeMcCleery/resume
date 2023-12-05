@@ -12,7 +12,10 @@ const slug = useRoute().params.slug as String[]
 
 const story = await useAsyncStoryblok(
   'pages/' + (slug && slug.length > 0 ? slug.join('/') : 'home'),
-  { version: config.public.storyblokVersion }
+  {
+    version: config.public.storyblokVersion,
+    resolve_links: 'url'
+  }
 )
 
 if (!story.value) {
