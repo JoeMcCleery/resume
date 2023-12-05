@@ -51,4 +51,22 @@ Locally preview production build:
 npm run preview
 ```
 
+Using Node.js deploy the generated folder .output
+
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Static deploy
+
+To generate that static site:
+
+```bash
+npm run generate
+```
+
+Using your static site hosting of choice, deploy the generated folder .output/public
+
+To generate and deploy to a the gh-pages branch:
+
+```bash
+npm run deploy
+```
