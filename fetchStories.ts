@@ -2,7 +2,7 @@ export default async function fetchStories (routes: string[], cacheVersion: numb
   const token = process.env.STORYBLOK_ACCESS_TOKEN
   const version = process.env.NUXT_PUBLIC_STORYBLOK_VERSION
   const perPage = 100
-  const toIgnore = ['home']
+  const toIgnore : string[] = []
 
   try {
     const response = await fetch(
@@ -11,9 +11,9 @@ export default async function fetchStories (routes: string[], cacheVersion: numb
     const data = await response.json()
 
     // Add routes to the array
-    Object.values(data.links).forEach((link) => {
-      if (!toIgnore.includes(link.slug)) {
-        routes.push('/' + link.slug)
+    Object.values(data.links).forEach((link : any) => {
+      if (!toIgnore.includes(link.real_path) && link.published && !link.is_folder) {
+        routes.push(link.real_path)
       }
     })
 

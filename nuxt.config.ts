@@ -47,7 +47,7 @@ export default defineNuxtConfig({
       let cacheVersion = 0
 
       // other routes that are not in Storyblok with their slug.
-      const routes = ['/'] // adds home directly but with / instead of /home
+      const routes : string[] = []
       try {
         const result = await fetch(`https://api.storyblok.com/v2/cdn/spaces/me?token=${token}`)
 
