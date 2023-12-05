@@ -2,6 +2,7 @@
   <div
     v-if="blok"
     v-editable="blok"
+    class="underline"
   >
     <!--External URL Link-->
     <a
