@@ -12,8 +12,8 @@
     .text-context-darker {
         @apply text-text-darker dark:text-textDark-lighter transition-colors duration-200 ease-in-out
     }
-    .text-context-background {
-        @apply text-background dark:text-backgroundDark transition-colors duration-200 ease-in-out
+    .text-context-bg {
+        @apply text-bg dark:text-bgDark transition-colors duration-200 ease-in-out
     }
 
     .decoration-context {
@@ -37,13 +37,13 @@
     }
 
     .bg-context {
-        @apply bg-background dark:bg-backgroundDark transition-colors duration-200 ease-in-out
+        @apply bg-bg dark:bg-bgDark transition-colors duration-200 ease-in-out
     }
     .bg-context-lighter {
-        @apply bg-background-lighter dark:bg-backgroundDark-darker transition-colors duration-200 ease-in-out
+        @apply bg-bg-lighter dark:bg-bgDark-darker transition-colors duration-200 ease-in-out
     }
     .bg-context-darker {
-        @apply bg-background-darker dark:bg-backgroundDark-lighter transition-colors duration-200 ease-in-out
+        @apply bg-bg-darker dark:bg-bgDark-lighter transition-colors duration-200 ease-in-out
     }
     .bg-context-text {
         @apply bg-text dark:bg-textDark transition-colors duration-200 ease-in-out

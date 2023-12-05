@@ -37,7 +37,7 @@ module.exports = {
           lighter: lighten(textColourAlpha, 20),
           darker: darken(textColourAlpha, 20)
         },
-        background: {
+        bg: {
           DEFAULT: backgroundColourAlpha,
           lighter: lighten(backgroundColourAlpha, 20),
           darker: darken(backgroundColourAlpha, 20)
@@ -47,7 +47,7 @@ module.exports = {
           lighter: lighten(textColourDarkAlpha, 20),
           darker: darken(textColourDarkAlpha, 20)
         },
-        backgroundDark: {
+        bgDark: {
           DEFAULT: backgroundColourDarkAlpha,
           lighter: lighten(backgroundColourDarkAlpha, 20),
           darker: darken(backgroundColourDarkAlpha, 20)
