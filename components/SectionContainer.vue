@@ -1,13 +1,9 @@
 <template>
   <div
-    v-if="blok"
-    v-editable="blok"
     class="relative text-context bg-context"
     :style="blok.override_colours ? cssVars : ''"
   >
-    <div class="container m-auto px-4 py-16">
-      <RichText :text="blok.text" />
-    </div>
+    <slot />
   </div>
 </template>
 
