@@ -20,10 +20,12 @@ export default async function fetchStories (routes: string[], cacheVersion: numb
     // Check if there are more pages with links
 
     const total = response.headers.get('total')
-    const maxPage = Math.ceil(total / perPage)
+    if(total){
+      const maxPage = Math.ceil(parseInt(total) / perPage)
 
-    if (maxPage > page) {
-      await fetchStories(routes, cacheVersion, ++page)
+      if (maxPage > page) {
+        await fetchStories(routes, cacheVersion, ++page)
+      }
     }
   } catch (error) {
     console.error(error)
