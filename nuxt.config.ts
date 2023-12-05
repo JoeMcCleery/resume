@@ -37,6 +37,9 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
+  app: {
+    baseURL: process.env.BASE_URL
+  },
   hooks: {
     async 'nitro:config' (nitroConfig) {
       if (!nitroConfig || nitroConfig.dev) {
