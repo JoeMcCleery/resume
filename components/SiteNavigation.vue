@@ -1,17 +1,15 @@
 <template>
-  <nav>
-    <ul class="flex space-x-4 text-lg font-bold items-center justify-center text-context decoration-context">
-      <li>
-        <NuxtLink to="/" class="text-3xl font-bold px-4 py-2 text-context rounded-full border-2 border-context default-focus">
-          <span>{{ $config.public.websiteTitle }}</span>
-        </NuxtLink>
-      </li>
-      <li v-for="story in stories" :key="story.id">
-        <NuxtLink :to="`/${story.slug}`" class="px-4 py-2 text-context rounded-full border-2 border-context default-focus">
-          <span>{{ story.content.navigation_button_text || story.name }}</span>
-        </NuxtLink>
-      </li>
-    </ul>
+  <nav class="flex justify-center items-center text-context decoration-context">
+    <div>
+      <NuxtLink to="/" class="block text-3xl font-bold px-4 py-2 text-context rounded-full border-2 border-context default-focus">
+        <span>{{ $config.public.websiteTitle }}</span>
+      </NuxtLink>
+    </div>
+    <div v-for="story in stories" :key="story.id">
+      <NuxtLink :to="`/${story.slug}`" class="block px-4 py-2 text-context rounded-full border-2 border-context default-focus">
+        {{ story.content.navigation_button_text || story.name }}
+      </NuxtLink>
+    </div>
   </nav>
 </template>
 
@@ -31,10 +29,8 @@ const stories = computed(() => {
 </script>
 
 <style scoped>
-nav a.router-link-active{
+nav a.router-link-active {
   @apply bg-context-text;
-  span {
-    @apply text-context-background;
-  }
+  @apply text-context-bg;
 }
 </style>
