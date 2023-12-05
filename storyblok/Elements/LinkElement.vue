@@ -11,6 +11,7 @@
       :title="blok.link.title"
       :rel="blok.link.rel"
       :target="blok.link.target"
+      class="default-focus"
     >
       {{ blok.link.title }}
     </a>
@@ -20,6 +21,7 @@
       :to="blok.link.story.url"
       :rel="blok.link.rel"
       :target="blok.link.target"
+      class="default-focus"
     >
       {{ blok.link.title }}
     </NuxtLink>
