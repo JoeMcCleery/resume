@@ -15,6 +15,12 @@
     .text-context-bg {
         @apply text-bg dark:text-bgDark transition-colors duration-200 ease-in-out
     }
+    .text-context-bg-lighter {
+        @apply text-bg-lighter dark:text-bgDark-darker transition-colors duration-200 ease-in-out
+    }
+    .text-context-bg-darker {
+        @apply text-bg-darker dark:text-bgDark-lighter transition-colors duration-200 ease-in-out
+    }
 
     .decoration-context {
         @apply decoration-text dark:decoration-textDark transition-colors duration-200 ease-in-out
@@ -48,9 +54,19 @@
     .bg-context-text {
         @apply bg-text dark:bg-textDark transition-colors duration-200 ease-in-out
     }
+    .bg-context-text-lighter {
+        @apply bg-text-lighter dark:bg-textDark-darker transition-colors duration-200 ease-in-out
+    }
+    .bg-context-text-darker {
+        @apply bg-text-darker dark:bg-textDark-lighter transition-colors duration-200 ease-in-out
+    }
+
+    .ring-context {
+        @apply ring-text dark:ring-textDark transition-colors duration-200 ease-in-out
+    }
 
     .default-focus {
-        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:ring-opacity-75
+        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-context focus-visible:ring-opacity-75
     }
     
     .min-h-24 {
