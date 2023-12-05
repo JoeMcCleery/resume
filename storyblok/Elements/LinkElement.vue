@@ -14,15 +14,14 @@
       {{ blok.link.title }}
     </a>
     <!--Internal Story Link-->
-    <a
+    <NuxtLink
       v-if="blok.link.linktype === 'story'"
-      :href="blok.link.story.url"
-      :title="blok.link.title"
+      :to="blok.link.story.url"
       :rel="blok.link.rel"
       :target="blok.link.target"
     >
       {{ blok.link.title }}
-    </a>
+    </NuxtLink>
   </div>
 </template>
 
