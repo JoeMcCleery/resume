@@ -7,8 +7,14 @@ declare module 'nuxt/schema' {
 
 declare global {
     interface ColourContext{
-        textColour: string,
-        backgroundColour: string,
+        light: {
+            textColour: string,
+            backgroundColour: string
+        },
+        dark: {
+            textColour: string,
+            backgroundColour: string
+        }
     }
 }
 

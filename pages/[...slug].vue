@@ -12,13 +12,29 @@ const slug = useRoute().params.slug as String[]
 
 const story = await useAsyncStoryblok(
   'pages/' + (slug && slug.length > 0 ? slug.join('/') : 'home'),
-  { version: config.public.storyblokVersion }
+  {
+    version: config.public.storyblokVersion,
+    resolve_links: 'url'
+  }
 )
+
+if (!story.value) {
+  throw createError({
+    statusCode: 404,
+    fatal: true
+  })
+}
 
 emit('page-layout', story.value.content.layout)
 emit('page-colours', {
-  textColour: hexToRgb(story.value.content.text_colour.color),
-  backgroundColour: hexToRgb(story.value.content.background_colour.color)
+  light: {
+    textColour: hexToRgb(story.value.content.text_colour.color),
+    backgroundColour: hexToRgb(story.value.content.background_colour.color)
+  },
+  dark: {
+    textColour: hexToRgb(story.value.content.text_colour_dark.color),
+    backgroundColour: hexToRgb(story.value.content.background_colour_dark.color)
+  }
 })
 
 useSeoMeta({

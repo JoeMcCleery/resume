@@ -1,47 +1,38 @@
 <template>
-  <div
+  <SectionContainer
     v-if="blok"
     v-editable="blok"
-    class="flex justify-center items-center h-96 w-full overflow-hidden relative"
-    :style="blok.override_colours ? cssVars : ''"
+    :blok="blok"
+    class="w-full h-96"
   >
-    <nuxt-img
-      v-if="blok.background_image?.filename"
-      provider="storyblok"
-      format="webp"
-      :src="blok.background_image.filename"
-      :title="blok.background_image.title"
-      :alt="blok.background_image.alt"
-      :copyright="blok.background_image"
-      :source="blok.background_image.source"
+    <ImageComponent
+      :image="blok.background_image"
       class="object-cover absolute w-full h-full"
     />
     <div
-      class="absolute w-full h-full bg-background"
+      class="absolute w-full h-full bg-context"
       :style="`opacity: ${blok.overlay_opacity / 100}`"
     />
-    <div class="h-full container m-auto p-4 flex justify-center items-center z-10">
-      <h1 class="font-bold text-4xl text-center">
+    <div class="relative h-full container m-auto p-4 flex justify-center items-center flex-col space-between space-y-4 z-10">
+      <ImageComponent
+        :image="blok.banner_image"
+        class="rounded-full aspect-square h-40"
+      />
+      <h1
+        v-if="blok.banner_text"
+        class="text-6xl font-bold text-center"
+      >
         {{ blok.banner_text }}
       </h1>
     </div>
-  </div>
+  </SectionContainer>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   blok: {
     type: Object,
     required: true
   }
 })
-
-const sectionColours = ref({ textColour: '255 255 255', backgroundColour: '128 128 128' })
-
-sectionColours.value = {
-  textColour: hexToRgb(props.blok.text_colour.color),
-  backgroundColour: hexToRgb(props.blok.background_colour.color)
-}
-
-const cssVars = computedCssVars(sectionColours)
 </script>

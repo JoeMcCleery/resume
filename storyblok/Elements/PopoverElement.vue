@@ -5,11 +5,11 @@
   >
     <HeadlessPopover class="relative">
       <HeadlessPopoverButton
-        class="group transition duration-150 inline-flex items-center rounded-md text-text px-3 py-2 text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 ui-open:text-opacity-80"
+        class="group transition duration-150 inline-flex items-center rounded-md text-context px-3 py-2 text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 ui-open:text-opacity-80"
       >
         <span>{{ blok.button_text }}</span>
         <ChevronDownIcon
-          class="ml-2 h-5 w-5 ease-in-out text-text group-hover:text-opacity-70 ui-open:text-opacity-80"
+          class="ml-2 h-5 w-5 ease-in-out text-context group-hover:text-opacity-70 ui-open:text-opacity-80"
           aria-hidden="true"
         />
       </HeadlessPopoverButton>
@@ -28,7 +28,7 @@
           <div
             class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
           >
-            <div class="relative grid gap-8 bg-background p-7 lg:grid-cols-2">
+            <div class="relative grid gap-8 bg-context p-7 lg:grid-cols-2">
               <StoryblokComponent
                 v-for="element in blok.elements"
                 :key="element._uid"
@@ -42,8 +42,8 @@
   </div>
 </template>
 
-<script setup>
-import { ChevronDownIcon } from '@heroicons/vue/24/outline'
+<script setup lang="ts">
+import { ChevronDownIcon } from '@heroicons/vue/24/solid'
 
 defineProps({
   blok: {

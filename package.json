@@ -12,10 +12,12 @@
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-28088649.74a91bd",
+    "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/google-fonts": "^3.0.1",
     "@nuxtjs/tailwindcss": "^6.7.0",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18",
     "@vue/runtime-dom": "^3.3.4",
     "eslint": "^8.41.0",

@@ -1,6 +1,9 @@
 <template>
-  <main class="text-text bg-background">
+  <main>
     <DefaultHeader />
-    <slot />
+    <div class="pt-24 min-h-screen">
+      <slot />
+    </div>
+    <DefaultFooter />
   </main>
 </template>
