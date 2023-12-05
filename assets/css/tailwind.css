@@ -52,4 +52,8 @@
     .default-focus {
         @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:ring-opacity-75
     }
+    
+    .min-h-24 {
+        min-height: 6rem;
+    }
 }
