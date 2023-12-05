@@ -37,11 +37,13 @@ emit('page-colours', {
   }
 })
 
+const seoTitle = story.value?.content?.seo?.title || config.public.websiteTitle + (slug && slug.length > 0 ? ` - ${slug.join(' - ')}` : '')
+const seoDescription = story.value?.content?.seo?.description || ''
 useSeoMeta({
-  title: story.value?.content?.seo?.title || config.public.websiteTitle + (slug && slug.length > 0 ? ` - ${slug.join(' - ')}` : ''),
-  ogTitle: story.value?.content?.seo?.title || config.public.websiteTitle + (slug && slug.length > 0 ? ` - ${slug.join(' - ')}` : ''),
-  description: story.value?.content?.seo?.description || '',
-  ogDescription: story.value?.content?.seo?.description || '',
+  title: seoTitle,
+  ogTitle: seoTitle,
+  description: seoDescription,
+  ogDescription: seoDescription,
   ogImage: ''
 })
 
