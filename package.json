@@ -8,7 +8,8 @@
     "preview": "nuxi preview --dotenv .env",
     "postinstall": "nuxi prepare",
     "lint": "eslint .",
-    "proxy": "mkcert -install && mkcert localhost"
+    "proxy": "mkcert -install && mkcert localhost",
+    "deploy": "npm run generate && gh-pages -d .output/public --nojekyll"
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-28088649.74a91bd",
@@ -21,6 +22,7 @@
     "@types/node": "^18",
     "@vue/runtime-dom": "^3.3.4",
     "eslint": "^8.41.0",
+    "gh-pages": "^6.1.0",
     "nuxt": "^3.5.1",
     "nuxt-headlessui": "^1.1.4",
     "stylelint": "^15.6.2",
