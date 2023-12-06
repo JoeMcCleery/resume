@@ -18,7 +18,7 @@
     <!--Internal Story Link-->
     <NuxtLink
       v-if="blok.link.linktype === 'story'"
-      :to="blok.link.story.url"
+      :to="formattedURL(blok.link.story.url)"
       :rel="blok.link.rel"
       :target="blok.link.target"
       class="default-focus"
@@ -35,4 +35,11 @@ defineProps({
     required: true
   }
 })
+
+function formattedURL (url : string) {
+  if (url.charAt(0) !== '/') {
+    url = '/' + url
+  }
+  return url
+}
 </script>
