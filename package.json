@@ -12,7 +12,7 @@
     "deploy": "npm run generate && gh-pages -d .output/public --nojekyll"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-28088649.74a91bd",
+    "@nuxt/image-edge": "^1.1.0-28355789.b3279fe",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.1.0",
