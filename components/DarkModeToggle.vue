@@ -33,8 +33,8 @@ import { SunIcon, MoonIcon } from '@heroicons/vue/24/solid'
 const colourMode = useColorMode()
 const darkModeEnabled = ref(colourMode.value === 'dark')
 
-// Update colourMode.value when darkModeEnabled.value changes
+// Update colourMode.preference when darkModeEnabled.value changes
 watchEffect(() => {
-  colourMode.value = darkModeEnabled.value ? 'dark' : 'light'
+  colourMode.preference = darkModeEnabled.value ? 'dark' : 'light'
 })
 </script>
