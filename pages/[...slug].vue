@@ -1,7 +1,5 @@
 <template>
-  <div v-if="story">
-    <StoryblokComponent :blok="story.content" />
-  </div>
+  <StoryblokComponent v-if="story" :blok="story.content" />
 </template>
 
 <script setup lang="ts">
@@ -16,12 +14,18 @@ const story = await useAsyncStoryblok(
     version: config.public.storyblokVersion,
     resolve_links: 'url'
   }
-)
-
-if (!story.value) {
+).catch((error) => {
+  error = JSON.parse(error)
   throw createError({
-    statusCode: 404,
-    fatal: true
+    statusCode: error.status,
+    statusMessage: error.response
+  })
+})
+
+if (story.value.status) {
+  throw createError({
+    statusCode: story.value.status,
+    statusMessage: story.value.response
   })
 }
 
