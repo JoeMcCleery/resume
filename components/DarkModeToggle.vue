@@ -1,9 +1,8 @@
 <template>
   <HeadlessSwitch
-    v-if="!colourMode.unknown && mounted"
+    v-if="!colourMode.unknown"
     v-model="darkModeEnabled"
     as="template"
-    @click="setDarkModeEnabled(!darkModeEnabled)"
   >
     <button
       :class="darkModeEnabled ? 'bg-gray-500' : 'bg-yellow-500'"
@@ -32,15 +31,10 @@
 import { SunIcon, MoonIcon } from '@heroicons/vue/24/solid'
 
 const colourMode = useColorMode()
-const darkModeEnabled = useDarkModeEnabled()
-const mounted = ref(false)
+const darkModeEnabled = ref(colourMode.value === 'dark')
 
-function setDarkModeEnabled (enabled: boolean) {
-  colourMode.preference = enabled ? 'dark' : 'light'
-}
-
-onMounted(() => {
-  darkModeEnabled.value = colourMode.value === 'dark'
-  mounted.value = true
+// Update colourMode.value when darkModeEnabled.value changes
+watchEffect(() => {
+  colourMode.value = darkModeEnabled.value ? 'dark' : 'light'
 })
 </script>
