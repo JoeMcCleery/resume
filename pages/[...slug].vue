@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits<{(e: 'page-layout', layout: string): void, (e: 'page-colours', colours: ColourContext): void}>()
+const emit = defineEmits<{(e: 'pageLayout', layout: string): void, (e: 'pageColours', colours: ColourContext): void}>()
 
 const config = useRuntimeConfig()
 const slug = useRoute().params.slug as String[]
@@ -25,8 +25,8 @@ if (!story.value) {
   })
 }
 
-emit('page-layout', story.value.content.layout)
-emit('page-colours', {
+emit('pageLayout', story.value.content.layout)
+emit('pageColours', {
   light: {
     textColour: hexToRgb(story.value.content.text_colour.color),
     backgroundColour: hexToRgb(story.value.content.background_colour.color)
