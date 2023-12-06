@@ -23,6 +23,7 @@
 
 <script setup lang="ts">
 const config = useRuntimeConfig()
+defineEmits(['selectionMade'])
 
 const { data } = await useStoryblokApi().getStory('navigation-config', {
   resolve_relations: [
