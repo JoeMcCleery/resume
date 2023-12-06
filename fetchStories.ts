@@ -2,7 +2,7 @@ export default async function fetchStories (routes: string[], cacheVersion: numb
   const token = process.env.STORYBLOK_ACCESS_TOKEN
   const version = process.env.NUXT_PUBLIC_STORYBLOK_VERSION
   const perPage = 100
-  const toIgnore : string[] = []
+  const toIgnore : string[] = ['/contact-links', '/navigation-config']
 
   try {
     const response = await fetch(
