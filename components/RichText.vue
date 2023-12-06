@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { ISbRichtext } from 'storyblok-js-client'
+import { type ISbRichtext } from 'storyblok-js-client'
 
 const props = defineProps({
   text: {

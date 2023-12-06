@@ -1,12 +1,12 @@
 <template>
-  <div
+  <main
     class="relative w-full text-context bg-context"
     :style="cssVars"
   >
     <NuxtLayout :name="pageLayout">
       <NuxtPage @page-layout="updatePageLayout" @page-colours="updatePageColours" />
     </NuxtLayout>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
