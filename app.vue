@@ -12,10 +12,10 @@
 <script setup lang="ts">
 import './index.d.ts'
 
-const pageLayout = ref('default')
+const pageLayout : Ref<MaybeRef<false | 'default'> | ComputedRef<false | 'default'>> = ref('default')
 const pageColours = defaultColourContext()
 
-function updatePageLayout (layout: string) {
+function updatePageLayout (layout: MaybeRef<false | 'default'> | ComputedRef<false | 'default'>) {
   pageLayout.value = layout
 }
 
