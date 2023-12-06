@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@storyblok/nuxt',
     'nuxt-headlessui',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxt/image'
   ],
   runtimeConfig: {
     public: {
