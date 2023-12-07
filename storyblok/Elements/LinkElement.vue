@@ -1,45 +1,37 @@
 <template>
-  <div
+  <NuxtLink
     v-if="blok"
     v-editable="blok"
-    class="underline"
+    :to="formattedURL"
+    :rel="blok.link.rel"
+    :target="blok.link.target"
+    class="default-focus"
   >
-    <!--External URL Link-->
-    <a
-      v-if="blok.link.linktype === 'url'"
-      :href="blok.link.url"
-      :title="blok.link.title"
-      :rel="blok.link.rel"
-      :target="blok.link.target"
-      class="default-focus"
-    >
-      {{ blok.link.title }}
-    </a>
-    <!--Internal Story Link-->
-    <NuxtLink
-      v-if="blok.link.linktype === 'story'"
-      :to="formattedURL(blok.link.story.url)"
-      :rel="blok.link.rel"
-      :target="blok.link.target"
-      class="default-focus"
-    >
-      {{ blok.link.title }}
-    </NuxtLink>
-  </div>
+    {{ blok.link.title }}
+  </NuxtLink>
 </template>
 
 <script setup lang='ts'>
-defineProps({
+const props = defineProps({
   blok: {
     type: Object,
     required: true
   }
 })
 
-function formattedURL (url : string) {
-  if (url.charAt(0) !== '/') {
-    url = '/' + url
+const formattedURL = computed(() => {
+  let url = ''
+  switch (props.blok.link.linktype) {
+    case 'story':
+      url = props.blok.link.story.url
+      if (url.charAt(0) !== '/') {
+        url = '/' + url
+      }
+      break
+    case 'url':
+      url = props.blok.link.url
+      break
   }
   return url
-}
+})
 </script>
