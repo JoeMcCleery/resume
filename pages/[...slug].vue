@@ -10,17 +10,14 @@ const slug = useRoute().params.slug as String[]
 
 const story = await useAsyncStoryblok(
   'pages/' + (slug && slug.length > 0 ? slug.join('/') : 'home'),
-  {
+  { // API Options
     version: config.public.storyblokVersion,
     resolve_links: 'url'
+  },
+  { // Bridge Options
+    resolveLinks: 'url'
   }
-).catch((error) => {
-  error = JSON.parse(error)
-  throw createError({
-    statusCode: error.status,
-    statusMessage: error.response
-  })
-})
+)
 
 if (story.value.status) {
   throw createError({
@@ -41,8 +38,8 @@ emit('pageColours', {
   }
 })
 
-const seoTitle = story.value?.content?.seo?.title || config.public.websiteTitle + (slug && slug.length > 0 ? ` - ${slug.join(' - ')}` : '')
-const seoDescription = story.value?.content?.seo?.description || ''
+const seoTitle = story.value.content.seo.title || config.public.websiteTitle + (slug && slug.length > 0 ? ` - ${slug.join(' - ')}` : '')
+const seoDescription = story.value.content.seo.description || ''
 useSeoMeta({
   title: seoTitle,
   ogTitle: seoTitle,
