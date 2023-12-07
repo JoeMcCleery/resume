@@ -1,27 +1,36 @@
 <template>
-  <div class="flex justify-center items-center space-x-4">
-    <a
+  <div v-if="story" class="flex justify-center items-center space-x-4">
+    <StoryblokComponent
       v-for="link in links"
       :key="link._uuid"
-      :href="link.link.url"
-      :title="link.link.title"
-      :rel="link.link.rel"
-      :target="link.link.target"
-      class="px-4 py-2 text-context rounded-full border-2 border-context default-focus"
-    >
-      {{ link.link.title }}
-    </a>
+      :blok="link"
+      class="block px-4 py-2 text-context rounded-full border-2 border-context"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 const config = useRuntimeConfig()
 
-const { data } = await useStoryblokApi().getStory('contact-links', {
-  version: config.public.storyblokVersion
-})
+const story = await useAsyncStoryblok(
+  'contact-links',
+  { // API Options
+    version: config.public.storyblokVersion,
+    resolve_links: 'url'
+  },
+  { // Bridge Options
+    resolveLinks: 'url'
+  }
+)
+
+if (story.value.status) {
+  throw createError({
+    statusCode: story.value.status,
+    statusMessage: story.value.response
+  })
+}
 
 const links = computed(() => {
-  return data.story.content.links
+  return story.value.content.links
 })
 </script>

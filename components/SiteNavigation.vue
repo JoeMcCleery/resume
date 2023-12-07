@@ -1,23 +1,13 @@
 <template>
-  <nav class="flex justify-center items-center text-context decoration-context">
-    <div>
-      <NuxtLink
-        to="/"
-        class="block text-3xl font-bold px-4 py-2 text-context rounded-full border-2 border-context default-focus"
-        @click="$emit('selectionMade')"
-      >
-        <span>{{ $config.public.websiteTitle }}</span>
-      </NuxtLink>
-    </div>
-    <div v-for="story in stories" :key="story.id">
-      <NuxtLink
-        :to="`/${story.slug}`"
-        class="block px-4 py-2 text-context rounded-full border-2 border-context default-focus"
-        @click="$emit('selectionMade')"
-      >
-        {{ story.content.navigation_button_text || story.name }}
-      </NuxtLink>
-    </div>
+  <nav v-if="story" class="flex justify-center items-center text-context decoration-context">
+    <StoryblokComponent
+      v-for="(link,i) in links"
+      :key="link._uuid"
+      :blok="link"
+      class="block px-4 py-2 text-context rounded-full border-2 border-context"
+      :class="i === 0 ? 'text-3xl font-bold' : 'text-xl'"
+      @click="$emit('selectionMade')"
+    />
   </nav>
 </template>
 
@@ -25,15 +15,26 @@
 const config = useRuntimeConfig()
 defineEmits(['selectionMade'])
 
-const { data } = await useStoryblokApi().getStory('navigation-config', {
-  resolve_relations: [
-    'pages'
-  ],
-  version: config.public.storyblokVersion
-})
+const story = await useAsyncStoryblok(
+  'navigation-links',
+  { // API Options
+    version: config.public.storyblokVersion,
+    resolve_links: 'url'
+  },
+  { // Bridge Options
+    resolveLinks: 'url'
+  }
+)
 
-const stories = computed(() => {
-  return data.story.content.pages.map((uuid: string) => data.rels.find(story => story.uuid === uuid))
+if (story.value.status) {
+  throw createError({
+    statusCode: story.value.status,
+    statusMessage: story.value.response
+  })
+}
+
+const links = computed(() => {
+  return story.value.content.links
 })
 </script>
 
