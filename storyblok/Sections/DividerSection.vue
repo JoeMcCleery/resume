@@ -3,7 +3,7 @@
     v-if="blok"
     v-editable="blok"
     :blok="blok"
-    class="flex justify-center items-center border-t border-b border-context"
+    class="flex justify-center items-center"
     :style="`height: ${blok.height/4}rem`"
   >
     <hr class="w-full border-context">
