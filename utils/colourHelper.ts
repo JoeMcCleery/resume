@@ -16,11 +16,11 @@ export const rgbToHex = (r: number, g: number, b: number) : string => {
 
 export const defaultColourContext = () => ref({
   light: {
-    textColour: '32 32 32',
-    backgroundColour: '255 255 255'
+    textColour: '29 31 33',
+    backgroundColour: '239 238 238'
   },
   dark: {
     textColour: '255 255 255',
-    backgroundColour: '64 64 64'
+    backgroundColour: '29 31 33'
   }
 })
