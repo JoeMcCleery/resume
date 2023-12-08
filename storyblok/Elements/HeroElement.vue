@@ -17,7 +17,7 @@
         />
       </div>
       <div class="flex flex-col p-4">
-        <p class="underline">
+        <p>
           {{ blok.link.title }}
         </p>
         <p class="text-sm line-clamp-2">
