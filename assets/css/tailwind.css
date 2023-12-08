@@ -6,6 +6,10 @@
     .button {
         @apply flex justify-center items-center px-4 py-2 rounded-full no-underline bg-context neumorphic-context;
     }
+    
+    .section {
+        @apply container m-auto px-4 py-16 flex flex-col space-y-4;
+    }
 }
 
 @layer utilities {

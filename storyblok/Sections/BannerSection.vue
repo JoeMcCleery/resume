@@ -11,9 +11,9 @@
     />
     <div
       class="absolute w-full h-full bg-context"
-      :style="`opacity: ${blok.overlay_opacity / 100}`"
+      :style="`--tw-bg-opacity: ${blok.overlay_opacity / 100}`"
     />
-    <div class="relative h-full container m-auto p-4 flex justify-center items-center flex-col space-between space-y-4 z-10">
+    <div class="relative z-10 section h-full justify-center items-center">
       <ImageComponent
         :image="blok.banner_image"
         class="rounded-full aspect-square h-40"
