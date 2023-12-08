@@ -91,12 +91,12 @@
     }
 
     .neumorphic-context {
-        --neumorphic-colour-1: color-mix(in srgb, rgb(var(--bg-colour)), black 15%);
-        --neumorphic-colour-2: color-mix(in srgb, rgb(var(--bg-colour)), white 15%);
+        --neumorphic-colour-1: color-mix(in srgb, rgb(var(--bg-colour)), black 10%);
+        --neumorphic-colour-2: color-mix(in srgb, rgb(var(--bg-colour)), white 10%);
     }
     .dark .neumorphic-context {
-        --neumorphic-colour-1: color-mix(in srgb, rgb(var(--bg-colour-dark)), black 15%);
-        --neumorphic-colour-2: color-mix(in srgb, rgb(var(--bg-colour-dark)), white 15%);
+        --neumorphic-colour-1: color-mix(in srgb, rgb(var(--bg-colour-dark)), black 10%);
+        --neumorphic-colour-2: color-mix(in srgb, rgb(var(--bg-colour-dark)), white 10%);
     }
     .neumorphic {
         box-shadow: 4px 4px 12px var(--neumorphic-colour-1),
