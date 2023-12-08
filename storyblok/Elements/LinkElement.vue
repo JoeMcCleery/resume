@@ -5,7 +5,7 @@
     :to="formattedURL"
     :rel="blok.link.rel"
     :target="blok.link.target"
-    class="underline default-focus"
+    class="underline focus-default"
   >
     {{ blok.link.title }}
   </NuxtLink>
