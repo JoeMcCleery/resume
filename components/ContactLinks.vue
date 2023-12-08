@@ -4,7 +4,7 @@
       v-for="link in links"
       :key="link._uuid"
       :blok="link"
-      class="block px-4 py-2 text-context rounded-full border-2 border-context"
+      class="button no-underline"
     />
   </div>
 </template>

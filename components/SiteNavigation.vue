@@ -4,7 +4,7 @@
       v-for="(link,i) in links"
       :key="link._uuid"
       :blok="link"
-      class="block px-4 py-2 text-context rounded-full border-2 border-context"
+      class="button no-underline"
       :class="i === 0 ? 'text-3xl font-bold' : 'text-xl'"
       @click="$emit('selectionMade')"
     />
@@ -40,7 +40,6 @@ const links = computed(() => {
 
 <style scoped>
 nav a.router-link-active {
-  @apply bg-context-text;
-  @apply text-context-bg;
+  @apply bg-context-text text-context-bg shadow-none pointer-events-none;
 }
 </style>

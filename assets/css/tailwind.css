@@ -2,70 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .button {
+        @apply flex justify-center items-center px-4 py-2 rounded-full no-underline bg-context neumorphic-context;
+    }
+}
+
 @layer utilities {
     .text-context {
-        @apply text-text dark:text-textDark transition-colors duration-200 ease-in-out
+        @apply text-text dark:text-textDark transition-default;
     }
     .text-context-lighter {
-        @apply text-text-lighter dark:text-textDark-darker transition-colors duration-200 ease-in-out
+        @apply text-text-lighter dark:text-textDark-darker transition-default;
     }
     .text-context-darker {
-        @apply text-text-darker dark:text-textDark-lighter transition-colors duration-200 ease-in-out
+        @apply text-text-darker dark:text-textDark-lighter transition-default;
     }
     .text-context-bg {
-        @apply text-bg dark:text-bgDark transition-colors duration-200 ease-in-out
+        @apply text-bg dark:text-bgDark transition-default;
     }
     .text-context-bg-lighter {
-        @apply text-bg-lighter dark:text-bgDark-darker transition-colors duration-200 ease-in-out
+        @apply text-bg-lighter dark:text-bgDark-darker transition-default;
     }
     .text-context-bg-darker {
-        @apply text-bg-darker dark:text-bgDark-lighter transition-colors duration-200 ease-in-out
+        @apply text-bg-darker dark:text-bgDark-lighter transition-default;
     }
 
     .decoration-context {
-        @apply decoration-text dark:decoration-textDark transition-colors duration-200 ease-in-out
+        @apply decoration-text dark:decoration-textDark transition-default;
     }
     .decoration-context-lighter {
-        @apply decoration-text-lighter dark:decoration-textDark-darker transition-colors duration-200 ease-in-out
+        @apply decoration-text-lighter dark:decoration-textDark-darker transition-default;
     }
     .decoration-context-darker {
-        @apply decoration-text-darker dark:decoration-textDark-lighter transition-colors duration-200 ease-in-out
+        @apply decoration-text-darker dark:decoration-textDark-lighter transition-default;
     }
 
     .border-context {
-        @apply border-text dark:border-textDark transition-colors duration-200 ease-in-out
+        @apply border-text dark:border-textDark transition-default;
     }
     .border-context-lighter {
-        @apply border-text-lighter dark:border-textDark-darker transition-colors duration-200 ease-in-out
+        @apply border-text-lighter dark:border-textDark-darker transition-default;
     }
     .border-context-darker {
-        @apply border-text-darker dark:border-textDark-lighter transition-colors duration-200 ease-in-out
+        @apply border-text-darker dark:border-textDark-lighter transition-default;
     }
 
     .bg-context {
-        @apply bg-bg dark:bg-bgDark transition-colors duration-200 ease-in-out
+        @apply bg-bg dark:bg-bgDark transition-default;
     }
     .bg-context-lighter {
-        @apply bg-bg-lighter dark:bg-bgDark-darker transition-colors duration-200 ease-in-out
+        @apply bg-bg-lighter dark:bg-bgDark-darker transition-default;
     }
     .bg-context-darker {
-        @apply bg-bg-darker dark:bg-bgDark-lighter transition-colors duration-200 ease-in-out
+        @apply bg-bg-darker dark:bg-bgDark-lighter transition-default;
     }
     .bg-context-text {
-        @apply bg-text dark:bg-textDark transition-colors duration-200 ease-in-out
+        @apply bg-text dark:bg-textDark transition-default;
     }
     .bg-context-text-lighter {
-        @apply bg-text-lighter dark:bg-textDark-darker transition-colors duration-200 ease-in-out
+        @apply bg-text-lighter dark:bg-textDark-darker transition-default;
     }
     .bg-context-text-darker {
-        @apply bg-text-darker dark:bg-textDark-lighter transition-colors duration-200 ease-in-out
+        @apply bg-text-darker dark:bg-textDark-lighter transition-default;
     }
 
     .ring-context {
-        @apply ring-text dark:ring-textDark transition-colors duration-200 ease-in-out
+        @apply ring-text dark:ring-textDark transition-default;
     }
 
-    .default-focus {
-        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-context focus-visible:ring-opacity-75
+    .transition-default {
+        @apply transition duration-200 ease-in-out;
+    }
+
+    .focus-default {
+        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-context focus-visible:ring-opacity-75;
+    }
+
+    .neumorphic-context {
+        @apply neumorphic-bg-light dark:neumorphic-bg-dark transition-default;
+    }
+    .neumorphic-context-text {
+        @apply neumorphic-text-light dark:neumorphic-text-dark transition-default;
+    }
+
+    .neumorphic-bg-light {
+        @apply border-text border border-opacity-5;
+        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--background-colour)), black 15%),
+        -4px -4px 12px color-mix(in srgb, rgb(var(--background-colour)), white 15%);
+    }
+    .neumorphic-bg-light:hover, .neumorphic-bg-light:focus-visible {
+        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--background-colour)), black 15%),
+        -1px -1px 6px color-mix(in srgb, rgb(var(--background-colour)), white 15%);
+    }
+    .neumorphic-bg-light:active {
+        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--background-colour)), black 15%),
+        inset -1px -1px 4px color-mix(in srgb, rgb(var(--background-colour)), white 15%);
+    }
+
+    .neumorphic-bg-dark {
+        @apply border-bg border border-opacity-5;
+        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--background-colour-dark)), black 15%),
+        -4px -4px 12px color-mix(in srgb, rgb(var(--background-colour-dark)), white 15%);
+    }
+    .neumorphic-bg-dark:hover, .dark .neumorphic-bg-dark:focus-visible {
+        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--background-colour-dark)), black 15%),
+        -1px -1px 6px color-mix(in srgb, rgb(var(--background-colour-dark)), white 15%);
+    }
+    .neumorphic-bg-dark:active {
+        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--background-colour-dark)), black 15%),
+        inset -1px -1px 4px color-mix(in srgb, rgb(var(--background-colour-dark)), white 15%);
+    }
+
+    .neumorphic-text-light {
+        @apply border border-opacity-5;
+        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--text-colour)), black 15%),
+        -4px -4px 12px color-mix(in srgb, rgb(var(--text-colour)), white 15%);
+    }
+    .neumorphic-text-light:hover, .neumorphic-text-light:focus-visible {
+        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--text-colour)), black 15%),
+        -1px -1px 6px color-mix(in srgb, rgb(var(--text-colour)), white 15%);
+    }
+    .neumorphic-text-light:active {
+        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--text-colour)), black 15%),
+        inset -1px -1px 4px color-mix(in srgb, rgb(var(--text-colour)), white 15%);
+    }
+
+    .neumorphic-text-dark {
+        @apply border border-opacity-5;
+        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--text-colour-dark)), black 15%),
+        -4px -4px 12px color-mix(in srgb, rgb(var(--text-colour-dark)), white 15%);
+    }
+    .neumorphic-text-dark:hover, .dark .neumorphic-text-dark:focus-visible {
+        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--text-colour-dark)), black 15%),
+        -1px -1px 6px color-mix(in srgb, rgb(var(--text-colour-dark)), white 15%);
+    }
+    .neumorphic-text-dark:active {
+        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--text-colour-dark)), black 15%),
+        inset -1px -1px 4px color-mix(in srgb, rgb(var(--text-colour-dark)), white 15%);
     }
 }

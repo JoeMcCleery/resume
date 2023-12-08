@@ -4,7 +4,7 @@
     <div class="container w-full mx-auto flex flex-col">
       <div class="p-4 flex w-full items-center justify-between h-24">
         <button
-          class="sm:hidden flex justify-center items-center text-2xl px-4 py-2 text-context rounded-full border-2 border-context default-focus"
+          class="sm:hidden button"
           @click="showNav = !showNav"
         >
           <span>Menu</span>
