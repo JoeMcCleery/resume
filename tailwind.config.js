@@ -1,11 +1,11 @@
 const textColourAlpha = 'rgb(var(--text-colour) / <alpha-value>)'
 const textColour = 'rgb(var(--text-colour))'
-const backgroundColourAlpha = 'rgb(var(--background-colour) / <alpha-value>)'
-const backgroundColour = 'rgb(var(--background-colour))'
+const backgroundColourAlpha = 'rgb(var(--bg-colour) / <alpha-value>)'
+const backgroundColour = 'rgb(var(--bg-colour))'
 const textColourDarkAlpha = 'rgb(var(--text-colour-dark) / <alpha-value>)'
 const textColourDark = 'rgb(var(--text-colour-dark))'
-const backgroundColourDarkAlpha = 'rgb(var(--background-colour-dark) / <alpha-value>)'
-const backgroundColourDark = 'rgb(var(--background-colour-dark))'
+const backgroundColourDarkAlpha = 'rgb(var(--bg-colour-dark) / <alpha-value>)'
+const backgroundColourDark = 'rgb(var(--bg-colour-dark))'
 const lighten = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, white ${amount}%)`
 const darken = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, black ${amount}%)`
 
