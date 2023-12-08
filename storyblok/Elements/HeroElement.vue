@@ -8,17 +8,21 @@
       :to="formattedURL"
       :rel="blok.link.rel"
       :target="blok.link.target"
-      class="group flex default-focus rounded-lg overflow-hidden bg-context-darker hover:shadow-lg focus-visible:shadow-lg"
+      class="group flex focus-default rounded-2xl overflow-hidden neumorphic-context"
     >
       <div class="relative aspect-square">
         <ImageComponent
           :image="blok.image"
-          class="object-cover absolute w-full h-full opacity-80 group-hover:opacity-100 group-focus-visible:opacity-100"
+          class="object-cover absolute w-full h-full"
         />
       </div>
-      <div class="flex flex-col m-4">
-        <p class="underline">{{ blok.link.title }}</p>
-        <p class="text-sm line-clamp-2">{{ blok.description }}</p>
+      <div class="flex flex-col p-4">
+        <p class="underline">
+          {{ blok.link.title }}
+        </p>
+        <p class="text-sm line-clamp-2">
+          {{ blok.description }}
+        </p>
       </div>
     </NuxtLink>
   </article>
