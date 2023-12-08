@@ -3,10 +3,11 @@
     v-if="blok"
     v-editable="blok"
     :blok="blok"
-    class="flex justify-center items-center"
-    :style="`height: ${blok.height/4}rem`"
+    class="section justify-center items-center"
   >
-    <hr class="w-full border-context">
+    <div
+      class="w-full h-8 rounded-full neumorphic-inset"
+    />
   </SectionContainer>
 </template>
 
