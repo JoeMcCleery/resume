@@ -8,7 +8,7 @@
       :to="formattedURL"
       :rel="blok.link.rel"
       :target="blok.link.target"
-      class="group flex focus-default rounded-2xl overflow-hidden neumorphic-context"
+      class="group flex flex-grow focus-default rounded-2xl overflow-hidden neumorphic-context"
     >
       <div class="relative aspect-square">
         <ImageComponent
