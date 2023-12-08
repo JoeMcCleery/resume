@@ -8,12 +8,12 @@
       :to="formattedURL"
       :rel="blok.link.rel"
       :target="blok.link.target"
-      class="group flex default-focus rounded-lg overflow-hidden bg-context-darker"
+      class="group flex default-focus rounded-lg overflow-hidden bg-context-darker hover:shadow-lg focus-visible:shadow-lg"
     >
       <div class="relative aspect-square">
         <ImageComponent
           :image="blok.image"
-          class="object-cover absolute w-full h-full opacity-80 group-hover:opacity-100 transition group-focus-visible:opacity-100"
+          class="object-cover absolute w-full h-full opacity-80 group-hover:opacity-100 group-focus-visible:opacity-100"
         />
       </div>
       <div class="flex flex-col m-4">
