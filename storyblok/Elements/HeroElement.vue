@@ -10,10 +10,10 @@
       :target="blok.link.target"
       class="group flex flex-grow focus-default rounded-2xl overflow-hidden neumorphic-animated"
     >
-      <div class="relative aspect-square">
+      <div class="relative aspect-square w-24 h-24">
         <ImageComponent
           :image="blok.image"
-          class="object-cover absolute w-full h-full"
+          class="object-cover absolute w-full h-full rounded-2xl neumorphic-sm border-none"
         />
       </div>
       <div class="flex flex-col p-4">
