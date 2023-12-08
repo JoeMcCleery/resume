@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="story" class="flex justify-center items-center text-context decoration-context">
+  <nav v-if="story" class="flex justify-center items-center text-context">
     <StoryblokComponent
       v-for="(link,i) in links"
       :key="link._uuid"
