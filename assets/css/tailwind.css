@@ -4,11 +4,11 @@
 
 @layer components {
     .button {
-        @apply flex justify-center items-center px-4 py-2 rounded-full no-underline bg-context neumorphic-context;
+        @apply flex justify-center items-center px-4 py-2 rounded-full no-underline bg-context neumorphic-animated;
     }
     
     .section {
-        @apply container m-auto px-4 py-16 flex flex-col space-y-4;
+        @apply container w-full m-auto px-4 py-8 flex flex-col space-y-4;
     }
 }
 
@@ -42,16 +42,6 @@
         @apply decoration-text-darker dark:decoration-textDark-lighter transition-default;
     }
 
-    .border-context {
-        @apply border-text dark:border-textDark transition-default;
-    }
-    .border-context-lighter {
-        @apply border-text-lighter dark:border-textDark-darker transition-default;
-    }
-    .border-context-darker {
-        @apply border-text-darker dark:border-textDark-lighter transition-default;
-    }
-
     .bg-context {
         @apply bg-bg dark:bg-bgDark transition-default;
     }
@@ -71,6 +61,23 @@
         @apply bg-text-darker dark:bg-textDark-lighter transition-default;
     }
 
+    .border-context {
+        @apply transition-default;
+        --tw-border-color: rgb(var(--text-colour) / var(--tw-border-opacity));
+        border-color: var(--tw-border-color);
+    }
+    .dark .border-context {
+        --tw-border-color: rgb(var(--text-colour-dark) / var(--tw-border-opacity));
+    }
+    .border-context-bg-darker {
+        @apply transition-default;
+        --tw-border-color: color-mix(in srgb, rgb(var(--bg-colour) / var(--tw-border-opacity)), rgb(0 0 0 / var(--tw-border-opacity)) 20%);
+        border-color: var(--tw-border-color);
+    }
+    .dark .border-context-bg-darker {
+        --tw-border-color: color-mix(in srgb, rgb(var(--bg-colour-dark) / var(--tw-border-opacity)), rgb(255 255 255 / var(--tw-border-opacity)) 20%);
+    }
+
     .ring-context {
         @apply ring-text dark:ring-textDark transition-default;
     }
@@ -84,65 +91,35 @@
     }
 
     .neumorphic-context {
-        @apply neumorphic-bg-light dark:neumorphic-bg-dark transition-default;
+        --neumorphic-colour-1: color-mix(in srgb, rgb(var(--bg-colour)), black 15%);
+        --neumorphic-colour-2: color-mix(in srgb, rgb(var(--bg-colour)), white 15%);
     }
-    .neumorphic-context-text {
-        @apply neumorphic-text-light dark:neumorphic-text-dark transition-default;
+    .dark .neumorphic-context {
+        --neumorphic-colour-1: color-mix(in srgb, rgb(var(--bg-colour-dark)), black 15%);
+        --neumorphic-colour-2: color-mix(in srgb, rgb(var(--bg-colour-dark)), white 15%);
     }
-
-    .neumorphic-bg-light {
-        @apply border-text border border-opacity-5;
-        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--background-colour)), black 15%),
-        -4px -4px 12px color-mix(in srgb, rgb(var(--background-colour)), white 15%);
+    .neumorphic {
+        box-shadow: 4px 4px 12px var(--neumorphic-colour-1),
+        -4px -4px 12px var(--neumorphic-colour-2);
+        @apply neumorphic-context border border-context-bg-darker border-opacity-20;
     }
-    .neumorphic-bg-light:hover, .neumorphic-bg-light:focus-visible {
-        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--background-colour)), black 15%),
-        -1px -1px 6px color-mix(in srgb, rgb(var(--background-colour)), white 15%);
+    .neumorphic-sm {
+        box-shadow: 1px 1px 6px var(--neumorphic-colour-1),
+        -1px -1px 6px var(--neumorphic-colour-2);
+        @apply neumorphic-context border border-context-bg-darker border-opacity-5;
     }
-    .neumorphic-bg-light:active {
-        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--background-colour)), black 15%),
-        inset -1px -1px 4px color-mix(in srgb, rgb(var(--background-colour)), white 15%);
+    .neumorphic-inset {
+        box-shadow: inset 1px 1px 4px var(--neumorphic-colour-1),
+        inset -1px -1px 4px var(--neumorphic-colour-2);
+        @apply neumorphic-context border border-context-bg-darker border-opacity-5;
     }
-
-    .neumorphic-bg-dark {
-        @apply border-bg border border-opacity-5;
-        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--background-colour-dark)), black 15%),
-        -4px -4px 12px color-mix(in srgb, rgb(var(--background-colour-dark)), white 15%);
+    .neumorphic-animated {
+        @apply transition-default neumorphic;
     }
-    .neumorphic-bg-dark:hover, .dark .neumorphic-bg-dark:focus-visible {
-        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--background-colour-dark)), black 15%),
-        -1px -1px 6px color-mix(in srgb, rgb(var(--background-colour-dark)), white 15%);
+    .neumorphic-animated:hover, .neumorphic-animated:focus-visible {
+        @apply neumorphic-sm;
     }
-    .neumorphic-bg-dark:active {
-        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--background-colour-dark)), black 15%),
-        inset -1px -1px 4px color-mix(in srgb, rgb(var(--background-colour-dark)), white 15%);
-    }
-
-    .neumorphic-text-light {
-        @apply border border-opacity-5;
-        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--text-colour)), black 15%),
-        -4px -4px 12px color-mix(in srgb, rgb(var(--text-colour)), white 15%);
-    }
-    .neumorphic-text-light:hover, .neumorphic-text-light:focus-visible {
-        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--text-colour)), black 15%),
-        -1px -1px 6px color-mix(in srgb, rgb(var(--text-colour)), white 15%);
-    }
-    .neumorphic-text-light:active {
-        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--text-colour)), black 15%),
-        inset -1px -1px 4px color-mix(in srgb, rgb(var(--text-colour)), white 15%);
-    }
-
-    .neumorphic-text-dark {
-        @apply border border-opacity-5;
-        box-shadow: 4px 4px 12px color-mix(in srgb, rgb(var(--text-colour-dark)), black 15%),
-        -4px -4px 12px color-mix(in srgb, rgb(var(--text-colour-dark)), white 15%);
-    }
-    .neumorphic-text-dark:hover, .dark .neumorphic-text-dark:focus-visible {
-        box-shadow: 1px 1px 6px color-mix(in srgb, rgb(var(--text-colour-dark)), black 15%),
-        -1px -1px 6px color-mix(in srgb, rgb(var(--text-colour-dark)), white 15%);
-    }
-    .neumorphic-text-dark:active {
-        box-shadow: inset 1px 1px 4px color-mix(in srgb, rgb(var(--text-colour-dark)), black 15%),
-        inset -1px -1px 4px color-mix(in srgb, rgb(var(--text-colour-dark)), white 15%);
+    .neumorphic-animated:active {
+        @apply neumorphic-inset;
     }
 }

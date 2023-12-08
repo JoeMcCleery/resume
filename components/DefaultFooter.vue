@@ -1,9 +1,7 @@
 <template>
-  <footer class="relative w-full bg-context text-context border-t-2 border-context">
-    <div class="w-full h-24 p-4 container mx-auto">
-      <div class="h-full flex items-center justify-center space-x-8">
-        <ContactLinks />
-      </div>
+  <footer class="relative w-full border-t border-context-bg-darker border-opacity-20">
+    <div class="section h-24 p-4 items-center justify-center">
+      <ContactLinks />
     </div>
   </footer>
 </template>

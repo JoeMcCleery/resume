@@ -1,6 +1,6 @@
 <template>
-  <header class="fixed w-full backdrop-blur-lg z-50 text-context border-b-2 border-context">
-    <div class="absolute h-full w-full opacity-50 -z-10 bg-context" />
+  <header class="fixed w-full backdrop-blur-lg z-50 text-context border-b border-context-bg-darker border-opacity-20">
+    <div class="absolute h-full w-full opacity-80 -z-10 bg-context" />
     <div class="container w-full mx-auto flex flex-col">
       <div class="p-4 flex w-full items-center justify-between h-24">
         <button
@@ -17,7 +17,7 @@
         <DarkModeToggle />
       </div>
       <div
-        class="sm:hidden justify-center items-center w-full p-4 border-t-2 border-context"
+        class="sm:hidden justify-center items-center w-full p-4 border-t border-context-bg-darker"
         :class="showNav ? 'flex' : 'hidden'"
       >
         <SiteNavigation

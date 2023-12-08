@@ -6,6 +6,8 @@ const textColourDarkAlpha = 'rgb(var(--text-colour-dark) / <alpha-value>)'
 const textColourDark = 'rgb(var(--text-colour-dark))'
 const backgroundColourDarkAlpha = 'rgb(var(--bg-colour-dark) / <alpha-value>)'
 const backgroundColourDark = 'rgb(var(--bg-colour-dark))'
+const lightenAlpha = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, rgb(255 255 255 / <alpha-value>) ${amount}%)`
+const darkenAlpha = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, rgb(0 0 0 / <alpha-value>) ${amount}%)`
 const lighten = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, white ${amount}%)`
 const darken = (rgbColour, amount) => `color-mix(in srgb, ${rgbColour}, black ${amount}%)`
 
@@ -34,23 +36,23 @@ module.exports = {
       colors: {
         text: {
           DEFAULT: textColourAlpha,
-          lighter: lighten(textColourAlpha, 20),
-          darker: darken(textColourAlpha, 20)
+          lighter: lightenAlpha(textColourAlpha, 20),
+          darker: darkenAlpha(textColourAlpha, 20)
         },
         bg: {
           DEFAULT: backgroundColourAlpha,
-          lighter: lighten(backgroundColourAlpha, 20),
-          darker: darken(backgroundColourAlpha, 20)
+          lighter: lightenAlpha(backgroundColourAlpha, 20),
+          darker: darkenAlpha(backgroundColourAlpha, 20)
         },
         textDark: {
           DEFAULT: textColourDarkAlpha,
-          lighter: lighten(textColourDarkAlpha, 20),
-          darker: darken(textColourDarkAlpha, 20)
+          lighter: lightenAlpha(textColourDarkAlpha, 20),
+          darker: darkenAlpha(textColourDarkAlpha, 20)
         },
         bgDark: {
           DEFAULT: backgroundColourDarkAlpha,
-          lighter: lighten(backgroundColourDarkAlpha, 20),
-          darker: darken(backgroundColourDarkAlpha, 20)
+          lighter: lightenAlpha(backgroundColourDarkAlpha, 20),
+          darker: darkenAlpha(backgroundColourDarkAlpha, 20)
         }
       },
       fontFamily: {
