@@ -1,0 +1,1 @@
+import{a6 as r,a8 as c,B as i,a9 as y}from"./entry.e668bd82.js";const v=async(s,e={},o={})=>{const n=`${JSON.stringify(e)}${s}`,t=r(`${n}-state`),u=c();if(i(()=>{t.value&&t.value.id&&y(t.value.id,a=>t.value=a,o)}),!t.value){const{data:a}=await u.get(`cdn/stories/${s}`,e);t.value=a.story}return t};export{v as u};
