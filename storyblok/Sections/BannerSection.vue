@@ -7,6 +7,7 @@
   >
     <ImageComponent
       :image="blok.background_image"
+      sizes="640px sm:1028px md:1536px lg:2048px xl:2560px 2xl:3072px"
       class="object-cover absolute w-full h-full"
     />
     <div
@@ -16,6 +17,7 @@
     <div class="relative z-10 section h-full justify-center items-center">
       <ImageComponent
         :image="blok.banner_image"
+        sizes="320px"
         class="rounded-full aspect-square h-40"
       />
       <h1

@@ -13,6 +13,7 @@
       <div class="relative aspect-square w-24 h-24">
         <ImageComponent
           :image="blok.image"
+          sizes="192px"
           class="object-cover absolute w-full h-full rounded-2xl neumorphic-sm border-none"
         />
       </div>

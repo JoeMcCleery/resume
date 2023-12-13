@@ -3,13 +3,13 @@ import fetchStories from './fetchStories'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxt/image-edge',
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
     '@storyblok/nuxt',
     'nuxt-headlessui',
     '@nuxtjs/color-mode',
-    '@nuxt/image'
+    '@nuxt/image',
+    'nuxt-gtag'
   ],
   runtimeConfig: {
     public: {
@@ -37,6 +37,9 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: ''
+  },
+  gtag: {
+    id: 'G-XXXXXXXXXX'
   },
   app: {
     baseURL: process.env.BASE_URL
