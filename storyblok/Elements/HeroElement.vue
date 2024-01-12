@@ -2,7 +2,7 @@
   <article
     v-if="blok"
     v-editable="blok"
-    class="h-24 flex"
+    class="h-28 flex"
   >
     <NuxtLink
       :to="formattedURL"
@@ -10,18 +10,18 @@
       :target="blok.link.target"
       class="group flex flex-grow focus-default rounded-2xl overflow-hidden neumorphic-animated"
     >
-      <div class="relative aspect-square w-24 h-24">
+      <div class="relative aspect-square w-20 h-20 m-4">
         <ImageComponent
           :image="blok.image"
           sizes="192px"
-          class="object-cover absolute w-full h-full rounded-2xl neumorphic-sm border-none"
+          class="object-cover absolute w-full h-full rounded-xl"
         />
       </div>
-      <div class="flex flex-col p-4">
-        <p>
+      <div class="flex flex-col pl-0 pr-4 py-6 leading-none space-y-2 justify-center">
+        <p class="font-bold">
           {{ blok.link.title }}
         </p>
-        <p class="text-sm line-clamp-2">
+        <p class="text-sm line-clamp-2 leading-tight text-context-darker">
           {{ blok.description }}
         </p>
       </div>
