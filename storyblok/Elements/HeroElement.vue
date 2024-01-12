@@ -21,7 +21,7 @@
         <p class="font-bold">
           {{ blok.link.title }}
         </p>
-        <p class="text-sm line-clamp-2 leading-tight text-context-darker">
+        <p class="text-sm line-clamp-2 leading-tight">
           {{ blok.description }}
         </p>
       </div>
