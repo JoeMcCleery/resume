@@ -18,4 +18,5 @@ dist
 !.env.example
 
 # Mkcert
-*.pem
+*.crt
+*.key
