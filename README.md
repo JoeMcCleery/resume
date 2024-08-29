@@ -4,27 +4,25 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
-Make sure to install the dependencies:
+Install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
 npm install
-
-# pnpm
-pnpm install
 ```
 
 ## Development Server
 
-Copy ".env.example" and rename to ".env.local".
+Copy `.env.example` and rename to `.env.local`.
 
 Create ssl certificate for local development:
 
 ```bash
-# Create ssl certificate (only need to run once)
+# Only need to run these once!
+
+# Install mkcert globally
+npm install -g mkcert
+
+# Create ssl certificate
 npm run proxy
 ```
 
@@ -37,7 +35,7 @@ npm run dev
 
 ## Production
 
-Copy ".env.example" and rename to ".env" and remove NODE_TLS_REJECT_UNAUTHORIZED=0.
+Copy `.env.example` and rename to `.env` and remove `NODE_TLS_REJECT_UNAUTHORIZED=0`.
 
 Build the application for production:
 
@@ -63,7 +61,7 @@ To generate that static site:
 npm run generate
 ```
 
-Using your static site hosting of choice, deploy the generated folder .output/public
+Using your static site hosting of choice, deploy the generated folder `.output/public`.
 
 To generate and deploy to a the gh-pages branch:
 
