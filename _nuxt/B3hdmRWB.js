@@ -1,0 +1,1 @@
+import{a7 as r,a9 as c,C as i,aa as y}from"./DOtT7igE.js";const v=async(s,e={},o={})=>{const n=`${JSON.stringify(e)}${s}`,a=r(`${n}-state`),u=c();if(i(()=>{a.value&&a.value.id&&y(a.value.id,t=>a.value=t,o)}),!a.value){const{data:t}=await u.get(`cdn/stories/${s}`,e);a.value=t.story}return a};export{v as u};
