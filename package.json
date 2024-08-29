@@ -3,12 +3,12 @@
   "private": true,
   "scripts": {
     "build": "nuxi build --dotenv .env",
-    "dev": "nuxi dev --dotenv .env.local --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "dev": "nuxi dev --dotenv .env.local --https --ssl-cert cert.crt --ssl-key cert.key",
     "generate": "nuxi generate --dotenv .env",
     "preview": "nuxi preview --dotenv .env",
     "postinstall": "nuxi prepare",
     "lint": "eslint .",
-    "proxy": "mkcert -install && mkcert localhost",
+    "proxy": "mkcert create-ca && mkcert create-cert",
     "deploy": "npm run generate && gh-pages -d .output/public --nojekyll"
   },
   "devDependencies": {
